@@ -2,4 +2,9 @@ langauge: csharp
 dotnet: 2.2
 script:
   dotnet test UnitTest1
-matrix
+matrix:
+  include:
+    - dist: xenial
+    - dist: trusty
+    - dotnet: 2.0.0
+      os: osx
