@@ -1,0 +1,5 @@
+langauge: csharp
+dotnet: 2.2
+script:
+  dotnet test UnitTest1
+matrix
