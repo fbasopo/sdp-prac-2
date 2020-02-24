@@ -5,31 +5,27 @@ namespace Problems.Tests
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
+        // [SetUp]
+        // public void Setup()
+        // {
+        // }
+
+        [TestCase("hello","5,1:hello")]
+        [TestCase("","0,0:")]
+        [TestCase("what    ...  did you say?? ","27,5:what    ...  did you say?? ")]
+
+
+         public void TestProgram(string input, string correctAnswer)
         {
+            //ARRANGE 
+            //there is no need to arrange 
+            //ACT
+            var pass=Program.Prefix(input);
+            //ASSERT
+            Assert.That(pass,Is.EqualTo(correctAnswer));      
         }
 
-       [Test]
-        public void Test1()
-        {
-            
-            string result = Program.Prefix("hello");
-            Assert.AreEqual("5,1:hello",result);
-        }
-        [Test]
-        public void Test2()
-        {
-           
-           string result = Program.Prefix("");
-           Assert.AreEqual("0,0:", result);
-        }
-        [Test]
-        public void Test3()
-        {
-            
-        string result = Program.Prefix("what    ...   did you say??");
-          Assert.AreEqual("27,5:what    ...   did you say??", result);
-        }
+        
     }
+   
 }
